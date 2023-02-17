@@ -51,10 +51,9 @@ const RegisterForm = () => {
           label="Enter your password"
           size="normal"
           variant="outlined"
+          type="password"
         />
-        {/* <Button sx={{ position: 'absolute', bottom: '0' }}>
-          <AiOutlineEye />
-        </Button> */}
+
         <Button type="submit" variant="contained" size="large" color="success">
           Registration
         </Button>
