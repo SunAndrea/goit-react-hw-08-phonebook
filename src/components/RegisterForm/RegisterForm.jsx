@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Container, TextField, Button } from '@mui/material';
 import { register } from 'auth/auth-operations';
-import { AiOutlineEye } from 'react-icons/ai';
+// import { AiOutlineEye } from 'react-icons/ai';
 import css from './RegisterForm.module.css';
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -52,9 +52,9 @@ const RegisterForm = () => {
           size="normal"
           variant="outlined"
         />
-        <Button sx={{ position: 'absolute', bottom: '0' }}>
+        {/* <Button sx={{ position: 'absolute', bottom: '0' }}>
           <AiOutlineEye />
-        </Button>
+        </Button> */}
         <Button type="submit" variant="contained" size="large" color="success">
           Registration
         </Button>
