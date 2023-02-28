@@ -1,9 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getContacts } from 'redux/selectors';
-import { getIsLoggedIn, getIsRefreshing, getToken } from 'auth/auth-selectors';
+import { getIsLoggedIn, getIsRefreshing } from 'auth/auth-selectors';
 import { fetchContacts } from 'redux/operations';
-import { useNavigate } from 'react-router-dom';
 import ContactsForm from '../components/ContactsForm/ContactsForm';
 import Filter from '../components/Filter/Filter';
 import ContactsList from '../components/ContactsList/ContactsList';
@@ -11,16 +10,14 @@ import ContactsList from '../components/ContactsList/ContactsList';
 const ContactPage = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   const isRefreshing = useSelector(getIsRefreshing);
-  const token = useSelector(getToken);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
-    if (isLoggedIn && isRefreshing && token) {
+    if (isLoggedIn && isRefreshing) {
       dispatch(fetchContacts());
     }
-    return;
-  }, [dispatch, isLoggedIn, isRefreshing, navigate, token]);
+  }, [dispatch, isLoggedIn, isRefreshing]);
 
   const contacts = useSelector(getContacts);
   const filterValue = useSelector(state => state.filter);

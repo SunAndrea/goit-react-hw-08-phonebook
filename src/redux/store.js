@@ -18,7 +18,7 @@ import { filterSlice } from './filterSlice';
 const authConfig = {
   key: 'auth',
   storage,
-  blacklist: ['logInerror'],
+  blacklist: ['user'],
 };
 
 export const store = configureStore({
